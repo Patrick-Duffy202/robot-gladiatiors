@@ -6,18 +6,33 @@ var playerMoney = 10;
 // You can also log multipule values at once like this 
 console.log(playerName, playerAttack, playerHealth);
 
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
+console.log(enemyNames[0]);
+console.log(enemyNames[1]);
+console.log(enemyNames[2]);
+console.log(enemyNames.length);
+for(var i = 0; i < enemyNames.length; i++) {
+    console.log(enemyNames[i]);
+    console.log(i);
+    console.log(enemyNames[i] + " is at " + i + " index ");
 
-var fight = function () {
+}
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+// * Fight all enemy-robots
+// * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
+
+var fight = function (enemyName) {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiatiors!")
 
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
     // Subtract the value of 'playerAttack' from the value of 'enemyHealth' and use the result to update the value in the 'enemyHealth' variable
     enemyHealth = enemyHealth - playerAttack;
-    enemyHealth - playerAttack;
+    
     // Log a resulting message to the console so we know that it worked.
     // if player choses to fight, then fight
 if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -65,4 +80,6 @@ if (promptFight === "fight" || promptFight === "FIGHT") {
 };
 
 
-fight();
+for(var i =0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
